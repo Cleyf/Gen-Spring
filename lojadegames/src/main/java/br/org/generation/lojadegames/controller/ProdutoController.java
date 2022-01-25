@@ -64,7 +64,7 @@ public class ProdutoController {
 	public ResponseEntity <Produto> postProduto(@Valid @RequestBody Produto produto ){
 		return categoriaRepository.findById(produto.getCategoria().getId())
 				.map(resposta -> ResponseEntity.status(HttpStatus.CREATED ).body(produtoRepository.save(produto)))
-				.orElse( ResponseEntity . badRequest() . build());
+				.orElse( ResponseEntity.badRequest().build());
 	}
 	
 	@PutMapping
