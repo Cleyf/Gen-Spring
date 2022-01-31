@@ -1,5 +1,6 @@
 package br.org.generation.blogpessoal.model;
 
+
 import java.util.List;
 
 import javax.persistence.CascadeType;
@@ -88,6 +89,7 @@ public class Usuario {
 	public void setPostagem(List<Postagem> postagem) {
 		this.postagem = postagem;
 	}
+
 	
 	
 }
