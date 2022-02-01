@@ -144,5 +144,24 @@ public class UsuarioControllerTest {
 
 			assertEquals(HttpStatus.NOT_FOUND, resposta.getStatusCode());
 	}
+	// Obs: Teste 7 foi o Evandro que ensinou, porém ainda não entendi muito bem, então vou deixar o comentario.
+	
+	@Test
+    @Order(7)
+    @DisplayName("Procurar usuário por ID")
+    public void procurarUsuariosPorId() {
+
+        Usuario usuarioId1 = usuarioRepository.save(new Usuario(0L, 
+                "Sabrina Sanches", "sabrina_sanches@email.com.br", "sabrina123", ""));
+
+        Usuario usuarioId2 = usuarioRepository.save(new Usuario(0L, 
+                "Ricardo Marques", "ricardo_marques@email.com.br", "ricardo123", ""));
+
+        ResponseEntity<String> resposta = testRestTemplate
+            .withBasicAuth("root", "root")
+            .exchange("/usuarios/"+usuarioId1.getId(), HttpMethod.GET, null, String.class);
+
+        assertEquals(HttpStatus.OK, resposta.getStatusCode());
+    }
 }
 	
