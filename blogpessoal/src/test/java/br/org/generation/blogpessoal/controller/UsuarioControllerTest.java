@@ -18,7 +18,7 @@ import org.springframework.http.HttpEntity;
 import org.springframework.http.HttpMethod;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
-import org.springframework.web.bind.annotation.PathVariable;
+
 
 import br.org.generation.blogpessoal.model.Usuario;
 import br.org.generation.blogpessoal.repository.UsuarioRepository;
